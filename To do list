@@ -1,0 +1,46 @@
+MasterMind Mobile App dev project 
+
+Todo List
+- [ ] Work on design 
+- [ ] Work on test case
+- [ ] Work on set up
+- [ ] Decide order of method making 
+- [ ] Go through and design on what’s going to happen when the game runs
+- [ ] Come up with algorithm for the computer to decide on what colours to choice, how the game is one, etc..
+- [ ] Need to decide on colour
+- [ ] Board design 
+- [ ] Make GitHub repository 
+- [ ] Decide on everything that is going to be implamented 
+    - [ ] Options are:
+    - [ ] 3 game difficulty
+    - [ ] Diffrent amount of guess
+    - [ ] Story to the game 
+
+
+
+Time line for the game 
+- [ ] Week Monday 8th dec
+    - [ ] Design game 
+    - [ ] Get menu set up 
+    - [ ] Get display box working for how to play 
+- [ ] Week Monday 12th
+    - [ ] Get start game working 
+    - [ ] Get basic mode set up and working 
+    - [ ] Make sure the algorithm works 
+    - [ ] Make sure the game can be one 
+- [ ] Week Monday 26th 
+    - [ ] Get saving to file working 
+    - [ ] Get loading from file working 
+    - [ ] Add more game modes 
+    - [ ] Do testing 
+- [ ] Week Monday 2nd Jan
+    - [ ] Continue with testing 
+    - [ ] Make sure everything it working 
+    - [ ] Finish test case files 
+    - [ ] Make GitHub files
+    - [ ] Get ready for upload
+- [ ] 4 January upload file to Moodle 
+    - [ ] This should have the game 
+    - [ ] Word doc with GitHub link 
+    - [ ] Exel test case file 
+    - [ ] Upload file to Moodle by 4pm
