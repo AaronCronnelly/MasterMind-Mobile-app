@@ -1,5 +1,23 @@
 ﻿<Properties StartupConfiguration="{1D75E2C1-04FC-48B1-B998-39F2C3E6AF5E}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WorldOfCodeBreaker" expanded="True" selected="True">
+            <Node name="WorldOfCodeBreaker" expanded="True">
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.WorldOfCodeBreaker FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.WorldOfCodeBreaker.Android FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.WorldOfCodeBreaker.Android FirstBuild="True" PreferredExecutionTarget="Android.Pixel_2_API_28" />
 </Properties>
