@@ -3,10 +3,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WorldOfCodeBreaker" expanded="True" selected="True">
-            <Node name="WorldOfCodeBreaker" expanded="True">
-              <Node name="MainPage.xaml" expanded="True" />
-            </Node>
+          <Node name="WorldOfCodeBreaker" expanded="True">
+            <Node name="WorldOfCodeBreaker" selected="True" />
           </Node>
         </State>
       </Pad>
