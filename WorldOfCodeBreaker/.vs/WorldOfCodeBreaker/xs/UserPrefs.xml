@@ -1,10 +1,20 @@
 ﻿<Properties StartupConfiguration="{1D75E2C1-04FC-48B1-B998-39F2C3E6AF5E}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WorldOfCodeBreaker/MainPage.xaml">
+    <Files>
+      <File FileName="WorldOfCodeBreaker/StartPage.xaml" Line="9" Column="54" />
+      <File FileName="WorldOfCodeBreaker/StartPage.xaml.cs" Line="17" Column="56" />
+      <File FileName="WorldOfCodeBreaker/App.xaml.cs" Line="12" Column="60" />
+      <File FileName="WorldOfCodeBreaker/MainPage.xaml" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="WorldOfCodeBreaker" expanded="True">
-            <Node name="WorldOfCodeBreaker" selected="True" />
+            <Node name="WorldOfCodeBreaker" expanded="True">
+              <Node name="App.xaml" expanded="True" />
+              <Node name="MainPage.xaml" selected="True" />
+              <Node name="StartPage.xaml" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
