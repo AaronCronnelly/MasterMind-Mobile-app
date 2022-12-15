@@ -2,11 +2,24 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="WorldOfCodeBreaker.StartPage">
+    x:Class="WorldOfCodeBreaker.StartPage"
+    BackgroundColor="Orange"
+    BackgroundImageSource="hacker.jpeg"
+    Opacity="0.5">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Button Text="When i am cliked" HorizontalOptions="Center" VerticalOptions="Center" x:Name="BTNChangePage"
+            <Button Text="Start Game" BackgroundColor="Red" TextColor="Yellow" Padding="30"
+                    HorizontalOptions="Center" VerticalOptions="Center" x:Name="BTNChangePage"
+                    Opacity="0.8"
                     Clicked="BTNChangePage_Clicked"/>
+            <Button Text="Load Game" BackgroundColor="Red" TextColor="Yellow" Padding="30"
+                    HorizontalOptions="Center" VerticalOptions="Center" x:Name="BTNLoadGame"
+                    Opacity="0.8"
+                    Clicked="BTNLoadGame_Clicked"/>
+            <Button Text="Rules" BackgroundColor="Red" TextColor="Yellow" Padding="30"
+                    HorizontalOptions="Center" VerticalOptions="Center" x:Name="BTNRules"
+                    Opacity="0.8"
+                    Clicked="BTNRules_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

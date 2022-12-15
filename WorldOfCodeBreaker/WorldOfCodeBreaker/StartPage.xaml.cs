@@ -16,5 +16,13 @@ namespace WorldOfCodeBreaker
         {
             await Navigation.PushAsync(new MainPage());
         }
+
+        void BTNLoadGame_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
+
+        void BTNRules_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
     }
 }
