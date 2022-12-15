@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Button Text="Start Game" BackgroundColor="Red" TextColor="Yellow" Padding="30"
-                    HorizontalOptions="Center" VerticalOptions="Center" x:Name="BTNStart"
+                    HorizontalOptions="Center" VerticalOptions="Center" x:Name="BTNChangePage"
                     Opacity="0.8" Margin="25"
                     Clicked="BTNChangePage_Clicked"/>
             <Button Text="Load Game" BackgroundColor="Red" TextColor="Yellow" Padding="30"

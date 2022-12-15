@@ -12,9 +12,10 @@ namespace WorldOfCodeBreaker
             InitializeComponent();
         }
 
-        private async void BTNCStart_Clicked(System.Object sender, System.EventArgs e)
+        private async void BTNChangePage_Clicked(System.Object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());
+            
         }
 
         void BTNLoadGame_Clicked(System.Object sender, System.EventArgs e)

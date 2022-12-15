@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WorldOfCodeBreaker.MainPage">
+             x:Class="WorldOfCodeBreaker.MainPage"
+             BackgroundColor="Blue">
+    <StackLayout>
+       <Button Text="Begin" BackgroundColor="DarkGray"
+               HorizontalOptions="Center" VerticalOptions="Center"
+               TextColor="Black" x:Name="BTNBegin"
+               Clicked="BTNBegin_Clicked"/>
+    
+        <Grid x:Name="GameGrid" BackgroundColor="Red"
+              HeightRequest="400" WidthRequest="400" HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand" IsVisible="false"
+              >
+        </Grid>
+    </StackLayout>
 
-        <!--THIS HOLDS THE OTHER TWO GRIDS-->
-    <Grid x:Name="HOLDING_GRID">
-           <Grid x:Name="MakeMainGrid" HeightRequest="300" WidthRequest="300" BackgroundColor="Orange"
-                 HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
-
-           </Grid>
-
-            <Grid x:Name="MakeColorGrid" HeightRequest="150" WidthRequest="150" BackgroundColor="Black"
-                  HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
-
-            </Grid>
-     </Grid>
+     
 </ContentPage>
