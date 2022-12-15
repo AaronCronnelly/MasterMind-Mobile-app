@@ -574,3 +574,5 @@
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/stamp/_GenerateJavaStubs.stamp
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/stamp/_GeneratePackageManagerJava.stamp
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
+/Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/res/drawable/hacker.jpeg
+/Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/android/bin/classes 2.dex
