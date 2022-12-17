@@ -19,10 +19,14 @@ Todo List
 
 
 Time line for the game 
-- [ ] Week Monday 8th dec
-    - [ ] Design game 
-    - [ ] Get menu set up 
-    - [ ] Get display box working for how to play 
+- [ ] Week Monday 8th dec,, eneded up being moved a week cos of test.
+    - [X] Design game(this is not yet fully done but is an ongoing process that is going to 
+    be done all throughout the project) 
+    - [X] Get menu set up(Menu is set up and working, to an extent, the start button works 
+    and so does the rules button, load button is not done yet as json has not yet been implemented 
+    need to go throught test case yet for the menu) 
+    - [ ] Get display box working for how to play (working on it, but has become an issue and is 
+    taking up time with desgin and geting working to the right exten)
 - [ ] Week Monday 12th
     - [ ] Get start game working 
     - [ ] Get basic mode set up and working 
