@@ -3,17 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldOfCodeBreaker.MainPage"
              BackgroundColor="Blue">
+
     <StackLayout>
        <Button Text="Begin" BackgroundColor="DarkGray"
                HorizontalOptions="Center" VerticalOptions="Center"
                TextColor="Black" x:Name="BTNBegin"
                Clicked="BTNBegin_Clicked"/>
     
-        <Grid x:Name="GameGrid" BackgroundColor="Red"
-              HeightRequest="400" WidthRequest="400" HorizontalOptions="CenterAndExpand"
-              VerticalOptions="CenterAndExpand" IsVisible="false"
+        <Grid x:Name="GameGrid" BackgroundColor="Red" Margin="10"
+              HeightRequest="400" WidthRequest="600" HorizontalOptions="StartAndExpand"
+              VerticalOptions="StartAndExpand" IsVisible="false"
               >
         </Grid>
+
+        <Grid x:Name="PegGrid" BackgroundColor="Yellow" Margin="2" HeightRequest="50" WidthRequest="50"
+              HorizontalOptions="End" VerticalOptions="End" IsVisible="false"></Grid>
+
     </StackLayout>
 
      
