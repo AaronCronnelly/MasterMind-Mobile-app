@@ -7,6 +7,10 @@
     Opacity="0.5">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Label Text="Wold Of Code Breaker" FontSize="Title" BackgroundColor="Black" TextColor="White"
+                   Margin="30,5,30,30" />
+
             <Button Text="Start Game" BackgroundColor="Red" TextColor="Yellow" Padding="30"
                     HorizontalOptions="Center" VerticalOptions="Center" x:Name="BTNChangePage"
                     Opacity="0.8" Margin="25"

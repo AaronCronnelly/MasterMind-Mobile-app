@@ -5,12 +5,16 @@
              BackgroundColor="Blue">
 
     <StackLayout>
-       <Button Text="Begin" BackgroundColor="DarkGray"
+
+        <Label Text="World of Code Breaker" FontSize="Title" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+           BackgroundColor="Red" TextColor="Black" Opacity="0.8" Margin="25,30"/>
+
+       <Button Text="Begin" BackgroundColor="DarkGray" Margin="25"
                HorizontalOptions="Center" VerticalOptions="Center"
                TextColor="Black" x:Name="BTNBegin"
                Clicked="BTNBegin_Clicked"/>
     
-        <Grid x:Name="GameGrid" BackgroundColor="Red" Margin="10"
+        <Grid x:Name="GameGrid" BackgroundColor="Red" Margin="25,30"
               HeightRequest="400" WidthRequest="600" HorizontalOptions="StartAndExpand"
               VerticalOptions="StartAndExpand" IsVisible="false"
               >
@@ -20,6 +24,4 @@
               HorizontalOptions="End" VerticalOptions="End" IsVisible="false"></Grid>
 
     </StackLayout>
-
-     
 </ContentPage>
