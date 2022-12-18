@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{1D75E2C1-04FC-48B1-B998-39F2C3E6AF5E}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorldOfCodeBreaker/MainPage.xaml">
     <Files>
-      <File FileName="WorldOfCodeBreaker/MainPage.xaml" Line="17" Column="68" />
+      <File FileName="WorldOfCodeBreaker/MainPage.xaml" Line="10" Column="63" />
       <File FileName="WorldOfCodeBreaker/MainPage.xaml.cs" Line="55" Column="38" NotebookId="1" />
     </Files>
     <Pads>
@@ -11,6 +11,12 @@
             <Node name="WorldOfCodeBreaker" expanded="True">
               <Node name="App.xaml" expanded="True" />
               <Node name="MainPage.xaml" expanded="True" selected="True" />
+              <Node name="StartPage.xaml" expanded="True" />
+            </Node>
+            <Node name="WorldOfCodeBreaker.Android" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

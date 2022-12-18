@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WorldOfCodeBreaker.MainPage"
-             BackgroundColor="Blue">
+             BackgroundColor="LightSlateGray">
 
     <StackLayout>
 
         <Label Text="World of Code Breaker" FontSize="Title" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
-           BackgroundColor="Red" TextColor="Black" Opacity="0.8" Margin="25,30"/>
+           BackgroundColor="LightGreen" TextColor="Black" Opacity="1" Margin="25,30"/>
 
-       <Button Text="Begin" BackgroundColor="DarkGray" Margin="25"
+       <Button Text="Begin" BackgroundColor="LightGreen" Margin="25"
                HorizontalOptions="Center" VerticalOptions="Center"
                TextColor="Black" x:Name="BTNBegin"
                Clicked="BTNBegin_Clicked"/>
