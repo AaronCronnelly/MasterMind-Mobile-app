@@ -12,6 +12,10 @@ namespace WorldOfCodeBreaker
 {
     public partial class MainPage : ContentPage
     {
+        //TAPGESUTER,
+        TapGestureRecognizer Choice = new TapGestureRecognizer();
+
+
         //CONSTATNS
         const int ROWS = 1;
         const int COLS = 4;
@@ -28,8 +32,20 @@ namespace WorldOfCodeBreaker
         void BTNBegin_Clicked(System.Object sender, System.EventArgs e)
         {
             makeGrid();
+            PegsGrid();//DISPLAYS USERS PEGS WHITE/BLACK
             DisplayBoxView();
             BTNBegin.IsVisible = false;
+        }
+
+        private void PegsGrid()
+        {
+            InputReplyGrid.IsVisible = true;
+            for(int i=0; i<PROWS; i++)
+            {
+                InputReplyGrid.RowDefinitions.Add(new RowDefinition());
+                InputReplyGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+
         }
 
         private void DisplayBoxView()
@@ -37,15 +53,43 @@ namespace WorldOfCodeBreaker
             for (int i = 0; i < COLS; i++)
                 GameGrid.Children.Add(new BoxView
                 {
-                    Margin=5,
+                    Margin = 5,
                     HeightRequest = 40,
                     WidthRequest = 40,
                     HorizontalOptions = LayoutOptions.Start,
-                    VerticalOptions=LayoutOptions.Start,
-                    CornerRadius=20,
-                    BackgroundColor=Color.Black,
-                    Opacity=0.5,
+                    VerticalOptions = LayoutOptions.Start,
+                    CornerRadius = 20,
+                    BackgroundColor = Color.Black,
+                    Opacity = 0.5,
+                    
+                }, i, 0);
+
+            for(int i=0; i<PCOLS; i++)
+            {
+                InputReplyGrid.Children.Add(new BoxView
+                {
+                    Margin = 2,
+                    HeightRequest = 20,
+                    WidthRequest = 20,
+                    CornerRadius = 10,
+                    BackgroundColor = Color.Red,
+
                 },i, 0);
+            }
+            for (int i=0; i<PROWS; i++)
+            {
+                InputReplyGrid.Children.Add(new BoxView
+                {
+                    Margin = 2,
+                    HeightRequest = 20,
+                    WidthRequest = 20,
+                    CornerRadius = 10,
+                    BackgroundColor = Color.Red,
+
+                },i,1);
+            }
+
+
         }//END OF DisplayBoxViwe
 
         private void makeGrid()

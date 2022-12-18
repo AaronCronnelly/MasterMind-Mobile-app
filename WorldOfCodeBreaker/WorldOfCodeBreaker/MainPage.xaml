@@ -4,24 +4,29 @@
              x:Class="WorldOfCodeBreaker.MainPage"
              BackgroundColor="LightSlateGray">
 
+  
     <StackLayout>
 
         <Label Text="World of Code Breaker" FontSize="Title" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
            BackgroundColor="LightGreen" TextColor="Black" Opacity="1" Margin="25,30"/>
-
+        <StackLayout Orientation="Horizontal">
+            
        <Button Text="Begin" BackgroundColor="LightGreen" Margin="25"
                HorizontalOptions="Center" VerticalOptions="Center"
                TextColor="Black" x:Name="BTNBegin"
                Clicked="BTNBegin_Clicked"/>
     
-        <Grid x:Name="GameGrid" BackgroundColor="Red" Margin="25,30"
-              HeightRequest="400" WidthRequest="600" HorizontalOptions="StartAndExpand"
-              VerticalOptions="StartAndExpand" IsVisible="false"
+        <Grid x:Name="GameGrid" BackgroundColor="Red" Margin="25,30,10,30"
+              HeightRequest="400" WidthRequest="300" HorizontalOptions="Start"
+              VerticalOptions="Start" IsVisible="false"
               >
         </Grid>
-
-        <Grid x:Name="PegGrid" BackgroundColor="Yellow" Margin="2" HeightRequest="50" WidthRequest="50"
-              HorizontalOptions="End" VerticalOptions="End" IsVisible="false"></Grid>
-
+        <Grid x:Name="InputReplyGrid" Background="black" HeightRequest="50"
+              WidthRequest="50" HorizontalOptions="End" VerticalOptions="Start" Margin="5,30,20,30"
+              IsVisible="false">
+        </Grid>
+        
+        </StackLayout><!--END OF HORIXONATL GIRD-->
+        
     </StackLayout>
 </ContentPage>
