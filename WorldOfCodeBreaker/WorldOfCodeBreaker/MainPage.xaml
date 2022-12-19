@@ -30,3 +30,10 @@
         <!--cheching is git working-->
     </StackLayout>
 </ContentPage>
+
+
+<!--
+how would you make the gird itterate down after each go, would
+have to use a asyn method to make it work, and then how woud this update
+each time that it is running. 
+-->
