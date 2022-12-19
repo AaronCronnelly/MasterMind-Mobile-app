@@ -576,3 +576,5 @@
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/res/drawable/codefall.png
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/android/bin/classes 2.dex
+/Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/android/assets/WorldOfCodeBreaker 2.dll
+/Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker.Android/obj/Debug/android/assets/WorldOfCodeBreaker 2.pdb

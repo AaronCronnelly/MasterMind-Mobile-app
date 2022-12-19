@@ -13,3 +13,4 @@
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker/bin/Debug/netstandard2.0/ref/WorldOfCodeBreaker.dll
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker/bin/Debug/netstandard2.0/WorldOfCodeBreaker.pdb
 /Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/aaroncronnelly/Documents/GitHub/MaterMinds/WorldOfCodeBreaker/WorldOfCodeBreaker/obj/Debug/netstandard2.0/WorldOfCodeBreaker.csproj.AssemblyReference.cache

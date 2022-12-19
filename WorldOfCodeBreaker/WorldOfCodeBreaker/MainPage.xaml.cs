@@ -94,6 +94,9 @@ namespace WorldOfCodeBreaker
 
         private void makeGrid()
         {
+            //need to add a iteration to this
+            //going to have to then print it out aggain
+            //then have to display everything.
             
             GameGrid.IsVisible = true;
             for(int i=0; i<ROWS; i++)
