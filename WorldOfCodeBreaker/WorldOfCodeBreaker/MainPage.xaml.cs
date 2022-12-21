@@ -12,9 +12,6 @@ namespace WorldOfCodeBreaker
 {
     public partial class MainPage : ContentPage
     {
-        //TAPGESUTER,
-        TapGestureRecognizer Choice = new TapGestureRecognizer();
-
 
         //CONSTATNS
         const int ROWS = 1;
@@ -22,7 +19,7 @@ namespace WorldOfCodeBreaker
         const int PROWS = 2;
         const int PCOLS = 2;
 
-
+        
 
         public MainPage()
         {
@@ -36,6 +33,8 @@ namespace WorldOfCodeBreaker
             DisplayBoxView();
             BTNBegin.IsVisible = false;
         }
+
+
 
         private void PegsGrid()
         {
@@ -51,7 +50,7 @@ namespace WorldOfCodeBreaker
         private void DisplayBoxView()
         {
             for (int i = 0; i < COLS; i++)
-                GameGrid.Children.Add(new BoxView
+                GameGrid.Children.Add(new BoxView//MAIN GIRD
                 {
                     Margin = 5,
                     HeightRequest = 40,
@@ -61,11 +60,18 @@ namespace WorldOfCodeBreaker
                     CornerRadius = 20,
                     BackgroundColor = Color.Black,
                     Opacity = 0.5,
-                    
+                     
                 }, i, 0);
 
+            for(int i=0; i<COLS; i++)
+            {
+                
+            }
+            //UNDER HERE IS FOR SECONDARY GRID, TO SHOW USER WHAT THE ARE GETTING
+            //RIGHT OR WRONG
             for(int i=0; i<PCOLS; i++)
             {
+                
                 InputReplyGrid.Children.Add(new BoxView
                 {
                     Margin = 2,
@@ -73,6 +79,7 @@ namespace WorldOfCodeBreaker
                     WidthRequest = 20,
                     CornerRadius = 10,
                     BackgroundColor = Color.Red,
+                    
 
                 },i, 0);
             }
