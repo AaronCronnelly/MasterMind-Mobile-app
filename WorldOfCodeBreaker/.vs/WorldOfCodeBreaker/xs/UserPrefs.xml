@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{1D75E2C1-04FC-48B1-B998-39F2C3E6AF5E}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorldOfCodeBreaker/MainPage.xaml.cs">
     <Files>
-      <File FileName="WorldOfCodeBreaker/MainPage.xaml" Line="1" Column="1" />
-      <File FileName="WorldOfCodeBreaker/MainPage.xaml.cs" Line="69" Column="14" NotebookId="1" />
+      <File FileName="WorldOfCodeBreaker/MainPage.xaml" Line="30" Column="39" />
+      <File FileName="WorldOfCodeBreaker/MainPage.xaml.cs" Line="78" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

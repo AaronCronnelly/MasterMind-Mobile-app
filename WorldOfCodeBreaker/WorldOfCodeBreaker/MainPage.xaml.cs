@@ -60,13 +60,8 @@ namespace WorldOfCodeBreaker
                     CornerRadius = 20,
                     BackgroundColor = Color.Black,
                     Opacity = 0.5,
-                     
-                }, i, 0);
+                }, i, 0); ;
 
-            for(int i=0; i<COLS; i++)
-            {
-                
-            }
             //UNDER HERE IS FOR SECONDARY GRID, TO SHOW USER WHAT THE ARE GETTING
             //RIGHT OR WRONG
             for(int i=0; i<PCOLS; i++)
