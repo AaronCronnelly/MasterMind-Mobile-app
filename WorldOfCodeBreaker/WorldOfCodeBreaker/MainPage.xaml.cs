@@ -12,6 +12,7 @@ namespace WorldOfCodeBreaker
 {
     public partial class MainPage : ContentPage
     {
+        
 
         //CONSTATNS
         const int ROWS = 1;
@@ -43,53 +44,54 @@ namespace WorldOfCodeBreaker
             {
                 InputReplyGrid.RowDefinitions.Add(new RowDefinition());
                 InputReplyGrid.ColumnDefinitions.Add(new ColumnDefinition());
-            }
 
+                var pegs = new BoxView
+                {
+                    Margin=2,
+                    HeightRequest=20,
+                    WidthRequest=20,
+                    CornerRadius=10,
+                    BackgroundColor=Color.LightBlue,
+                    Opacity = 1,
+                    HorizontalOptions=LayoutOptions.End,
+                    VerticalOptions=LayoutOptions.End,
+                };
+
+                InputReplyGrid.Children.Add(pegs, PROWS, PCOLS);
+            }
         }
 
         private void DisplayBoxView()
         {
-            for (int i = 0; i < COLS; i++)
-                GameGrid.Children.Add(new BoxView//MAIN GIRD
-                {
-                    Margin = 5,
-                    HeightRequest = 40,
-                    WidthRequest = 40,
-                    HorizontalOptions = LayoutOptions.Start,
-                    VerticalOptions = LayoutOptions.Start,
-                    CornerRadius = 20,
-                    BackgroundColor = Color.Black,
-                    Opacity = 0.5,
-                }, i, 0); ;
 
             //UNDER HERE IS FOR SECONDARY GRID, TO SHOW USER WHAT THE ARE GETTING
             //RIGHT OR WRONG
-            for(int i=0; i<PCOLS; i++)
-            {
+            //for(int i=0; i<PCOLS; i++)
+            //{
                 
-                InputReplyGrid.Children.Add(new BoxView
-                {
-                    Margin = 2,
-                    HeightRequest = 20,
-                    WidthRequest = 20,
-                    CornerRadius = 10,
-                    BackgroundColor = Color.Red,
+            //    InputReplyGrid.Children.Add(new BoxView
+            //    {
+            //        Margin = 2,
+            //        HeightRequest = 20,
+            //        WidthRequest = 20,
+            //        CornerRadius = 10,
+            //        BackgroundColor = Color.Red,
                     
 
-                },i, 0);
-            }
-            for (int i=0; i<PROWS; i++)
-            {
-                InputReplyGrid.Children.Add(new BoxView
-                {
-                    Margin = 2,
-                    HeightRequest = 20,
-                    WidthRequest = 20,
-                    CornerRadius = 10,
-                    BackgroundColor = Color.Red,
+            //    },i, 0);
+            //}
+            //for (int i=0; i<PROWS; i++)
+            //{
+            //    InputReplyGrid.Children.Add(new BoxView
+            //    {
+            //        Margin = 2,
+            //        HeightRequest = 20,
+            //        WidthRequest = 20,
+            //        CornerRadius = 10,
+            //        BackgroundColor = Color.Red,
 
-                },i,1);
-            }
+            //    },i,1);
+            //}
 
 
         }//END OF DisplayBoxViwe
@@ -109,7 +111,51 @@ namespace WorldOfCodeBreaker
             for(int i=0; i<COLS; i++)
             {
                 GameGrid.ColumnDefinitions.Add(new ColumnDefinition());
-                
+
+                var userInput = new BoxView
+                {
+                    Margin = 5,
+                    HeightRequest = 40,
+                    WidthRequest = 40,
+                    HorizontalOptions = LayoutOptions.Start,
+                    VerticalOptions = LayoutOptions.Start,
+                    CornerRadius = 20,
+                    BackgroundColor = Color.Black,
+                    Opacity = 1,
+                };
+               
+                var userchoice = new TapGestureRecognizer
+                {
+                    Command=new Command(() =>
+                    {
+                        if(userInput.Color==Color.Black)
+                        {
+                            userInput.Color = Color.Red;
+                        }
+                        else if (userInput.Color == Color.Red)
+                        {
+                            userInput.Color = Color.Blue;
+                        }
+                        else if (userInput.Color == Color.Blue)
+                        {
+                            userInput.Color = Color.Yellow;
+                        }
+                        else if (userInput.Color == Color.Yellow)
+                        {
+                            userInput.Color = Color.Green;
+                        }
+                        else 
+                        {
+                            userInput.Color = Color.Black;
+                        }
+                    })
+                };
+
+
+                userInput.GestureRecognizers.Add(userchoice);
+
+                GameGrid.Children.Add(userInput, i, 0);
+
             }
         }//END OF makeGrid
     }//END OF MAIN PAGE

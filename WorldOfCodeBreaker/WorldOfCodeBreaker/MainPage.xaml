@@ -16,7 +16,7 @@
                TextColor="Black" x:Name="BTNBegin"
                Clicked="BTNBegin_Clicked"/>
     
-        <Grid x:Name="GameGrid" BackgroundColor="Red" Margin="25,30,10,30"
+        <Grid x:Name="GameGrid" BackgroundColor="LightBlue" Margin="25,30,10,30"
               HeightRequest="400" WidthRequest="300" HorizontalOptions="Start"
               VerticalOptions="Start" IsVisible="false"
               >
