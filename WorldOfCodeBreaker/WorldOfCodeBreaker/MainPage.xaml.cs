@@ -33,32 +33,53 @@ namespace WorldOfCodeBreaker
             PegsGrid();//DISPLAYS USERS PEGS WHITE/BLACK
             DisplayBoxView();
             BTNBegin.IsVisible = false;
+            BTNCheck.IsVisible = true;
         }
 
 
 
         private void PegsGrid()
         {
-            InputReplyGrid.IsVisible = true;
-            for(int i=0; i<PROWS; i++)
-            {
-                InputReplyGrid.RowDefinitions.Add(new RowDefinition());
-                InputReplyGrid.ColumnDefinitions.Add(new ColumnDefinition());
+               
 
-                var pegs = new BoxView
+                InputReplyGrid.IsVisible = true;
+                for (int i = 0; i < PROWS; i++)
                 {
-                    Margin=2,
-                    HeightRequest=20,
-                    WidthRequest=20,
-                    CornerRadius=10,
-                    BackgroundColor=Color.LightBlue,
-                    Opacity = 1,
-                    HorizontalOptions=LayoutOptions.End,
-                    VerticalOptions=LayoutOptions.End,
-                };
+                    InputReplyGrid.RowDefinitions.Add(new RowDefinition());
 
-                InputReplyGrid.Children.Add(pegs, PROWS, PCOLS);
-            }
+                    var pegs = new BoxView
+                    {
+                        Margin = 2,
+                        HeightRequest = 20,
+                        WidthRequest = 20,
+                        CornerRadius = 10,
+                        BackgroundColor = Color.LightBlue,
+                        Opacity = 1,
+                        HorizontalOptions = LayoutOptions.End,
+                        VerticalOptions = LayoutOptions.End,
+                    };
+
+
+                    InputReplyGrid.Children.Add(pegs, 0, i);
+                }
+                for (int j = 0; j < PCOLS; j++)
+                {
+                    InputReplyGrid.ColumnDefinitions.Add(new ColumnDefinition());
+
+                    var pegs = new BoxView
+                    {
+                        Margin = 2,
+                        HeightRequest = 20,
+                        WidthRequest = 20,
+                        CornerRadius = 10,
+                        BackgroundColor = Color.LightBlue,
+                        Opacity = 1,
+                        HorizontalOptions = LayoutOptions.End,
+                        VerticalOptions = LayoutOptions.End,
+                    };
+
+                    InputReplyGrid.Children.Add(pegs, 1, j);
+                }
         }
 
         private void DisplayBoxView()
@@ -158,5 +179,10 @@ namespace WorldOfCodeBreaker
 
             }
         }//END OF makeGrid
+
+        void BTNCheck_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
+
     }//END OF MAIN PAGE
 }//END OF NAMES SPACE

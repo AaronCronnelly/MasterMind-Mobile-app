@@ -25,9 +25,12 @@
               WidthRequest="50" HorizontalOptions="End" VerticalOptions="Start" Margin="5,30,20,30"
               IsVisible="false">
         </Grid>
-        
+
+        <Button Text="check" BackgroundColor="LightGreen" Margin="10,25,10,25"
+                HorizontalOptions="Start" VerticalOptions="End"
+                TextColor="Black" x:Name="BTNCheck" IsVisible="false"
+                Clicked="BTNCheck_Clicked"/>
         </StackLayout><!--END OF HORIXONATL GIRD-->
-        <!--cheching is git working-->
     </StackLayout>
 </ContentPage>
 
