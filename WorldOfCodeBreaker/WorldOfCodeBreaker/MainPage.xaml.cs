@@ -77,7 +77,7 @@ namespace WorldOfCodeBreaker
                     HorizontalOptions = LayoutOptions.End,
                     VerticalOptions = LayoutOptions.End,
                 };
-
+                a
                 InputReplyGrid.Children.Add(pegs, 1, j);
             }
         }//END OF PEGSGRID
