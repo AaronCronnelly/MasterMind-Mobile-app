@@ -16,27 +16,23 @@
                TextColor="Black" x:Name="BTNBegin"
                Clicked="BTNBegin_Clicked"/>
     
-        <Grid x:Name="GameGrid" BackgroundColor="LightBlue" Margin="25,30,10,30"
+        <Grid x:Name="GameGrid" BackgroundColor="LightBlue" Margin="25,30,5,1"
               HeightRequest="400" WidthRequest="300" HorizontalOptions="Start"
-              VerticalOptions="Start" IsVisible="false"
+              VerticalOptions="Start" IsVisible="false" 
               >
-        </Grid>
+            </Grid>
         <Grid x:Name="InputReplyGrid" Background="black" HeightRequest="50"
               WidthRequest="50" HorizontalOptions="End" VerticalOptions="Start" Margin="5,30,20,30"
               IsVisible="false">
         </Grid>
 
+        </StackLayout><!--END OF HORIXONATL GIRD-->
+
         <Button Text="check" BackgroundColor="LightGreen" Margin="10,25,10,25"
                 HorizontalOptions="Start" VerticalOptions="End"
                 TextColor="Black" x:Name="BTNCheck" IsVisible="false"
                 Clicked="BTNCheck_Clicked"/>
-        </StackLayout><!--END OF HORIXONATL GIRD-->
     </StackLayout>
 </ContentPage>
 
 
-<!--
-how would you make the gird itterate down after each go, would
-have to use a asyn method to make it work, and then how woud this update
-each time that it is running. 
--->

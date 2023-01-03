@@ -15,12 +15,12 @@ namespace WorldOfCodeBreaker
 
 
         //CONSTATNS
-        const int ROWS = 1;
+        const int ROWS = 2;
         const int COLS = 4;
         const int PROWS = 2;
         const int PCOLS = 2;
 
-
+        
 
         public MainPage()
         {
@@ -30,18 +30,16 @@ namespace WorldOfCodeBreaker
 
         void BTNBegin_Clicked(System.Object sender, System.EventArgs e)
         {
-            makeGrid();
+            makeGrid(0);
             PegsGrid();//DISPLAYS USERS PEGS WHITE/BLACK
             BTNBegin.IsVisible = false;
             BTNCheck.IsVisible = true;
         }//END OF BTNBEGIN
 
-
+      
 
         private void PegsGrid()
         {
-
-
             InputReplyGrid.IsVisible = true;
             for (int i = 0; i < PROWS; i++)
             {
@@ -83,20 +81,9 @@ namespace WorldOfCodeBreaker
         }//END OF PEGSGRID
 
         private string[,] userAsnwer = new string[ROWS, COLS];
-        private void makeGrid()
+        private void makeGrid(int row)
         {
-            //need to add a iteration to this
-            //going to have to then print it out aggain
-            //then have to display everything.
-
-            
-
             GameGrid.IsVisible = true;
-            for (int i = 0; i < ROWS; i++)
-            {
-                GameGrid.RowDefinitions.Add(new RowDefinition());
-
-            }
             for (int i = 0; i < COLS; i++)
             {
                 GameGrid.ColumnDefinitions.Add(new ColumnDefinition());
@@ -113,48 +100,46 @@ namespace WorldOfCodeBreaker
                     Opacity = 1,
                 };
 
-                var userchoice = new TapGestureRecognizer
+                var userChoice = new TapGestureRecognizer
                 {
                     Command = new Command(() =>
-                      {
-                          if (userInput.Color == Color.Black)
-                          {
-                              userInput.Color = Color.Red;
-                              userAsnwer[0, i] = "red";
-                          }
-                          else if (userInput.Color == Color.Red)
-                          {
-                              userInput.Color = Color.Blue;
-                              userAsnwer[0, i] = "blue";
-                          }
-                          else if (userInput.Color == Color.Blue)
-                          {
-                              userInput.Color = Color.Yellow;
-                              userAsnwer[0, i] = "yellow";
-                          }
-                          else if (userInput.Color == Color.Yellow)
-                          {
-                              userInput.Color = Color.Green;
-                              userAsnwer[0, i] = "green";
-                          }
-                          else
-                          {
-                              userInput.Color = Color.Black;
-                          }
-                      })
+                    {
+                        if (userInput.BackgroundColor == Color.Black)
+                        {
+                            userInput.BackgroundColor = Color.Red;
+                            userAsnwer[row, i] = "red";//in theory this sould be userAnswer[0,0]="red";
+                        }
+                        else if (userInput.BackgroundColor == Color.Red)
+                        {
+                            userInput.BackgroundColor = Color.Blue;
+                           
+                        }
+                        else if (userInput.BackgroundColor == Color.Blue)
+                        {
+                            userInput.BackgroundColor = Color.Yellow;
+                            
+                        }
+                        else if (userInput.BackgroundColor == Color.Yellow)
+                        {
+                            userInput.BackgroundColor = Color.Green;
+                            
+                        }
+                        else
+                        {
+                            userInput.BackgroundColor = Color.Black;
+                        }
+
+                    })
                 };
 
-
-                userInput.GestureRecognizers.Add(userchoice);
-
+                userInput.GestureRecognizers.Add(userChoice);
                 GameGrid.Children.Add(userInput, i, 0);
-
             }
         }//END OF MAKEGRID
 
         void BTNCheck_Clicked(System.Object sender, System.EventArgs e)
         {
-            string[,] corretAnswer = new string[ROWS, COLS] { { "red", "green", "blue", "yellow" } };
+            string[,] corretAnswer = new string[1, 4] { { "red", "green", "blue", "yellow" } };
 
             checkAnswer(corretAnswer, userAsnwer);
 
@@ -183,5 +168,5 @@ namespace WorldOfCodeBreaker
 
             }
         }//END OF CHECKANSWER
-    }//END OF MAIN PAGE
+     }//END OF MAIN PAGE
 }//END OF NAMES SPACE
