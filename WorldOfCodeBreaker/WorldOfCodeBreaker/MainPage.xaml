@@ -16,13 +16,13 @@
                TextColor="Black" x:Name="BTNBegin"
                Clicked="BTNBegin_Clicked"/>
     
-        <Grid x:Name="GameGrid" BackgroundColor="LightBlue" Margin="25,30,5,1"
+        <Grid x:Name="GameGrid" BackgroundColor="LightBlue" Margin="25,30,0,1"
               HeightRequest="400" WidthRequest="300" HorizontalOptions="Start"
               VerticalOptions="Start" IsVisible="false" 
               >
             </Grid>
-        <Grid x:Name="InputReplyGrid" Background="black" HeightRequest="50"
-              WidthRequest="50" HorizontalOptions="End" VerticalOptions="Start" Margin="5,30,20,30"
+        <Grid x:Name="InputReplyGrid" Background="lightblue" HeightRequest="30"
+              WidthRequest="80" HorizontalOptions="End" VerticalOptions="Start" Margin="5,30"
               IsVisible="false">
         </Grid>
 
