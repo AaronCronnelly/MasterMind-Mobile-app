@@ -17,11 +17,11 @@ namespace WorldOfCodeBreaker
         //CONSTATNS
         const int ROWS = 10;
         const int COLS = 4;
-        const int PROWS = 4;
-        const int PCOLS = 2;
+        const int PCOLS = 4;
 
         //GLOBAL VARIABLE
-        
+        private string[,] userAsnwer = new string[ROWS, COLS];
+        string[,] corretAnswer = new string[1, 4] { { "red", "green", "blue", "yellow" } };
 
         public MainPage()
         {
@@ -42,7 +42,7 @@ namespace WorldOfCodeBreaker
         private void PegsGrid()
         {
             InputReplyGrid.IsVisible = true;
-            for (int i = 0; i < PROWS; i++)
+            for (int i = 0; i < PCOLS; i++)
             {
                 InputReplyGrid.ColumnDefinitions.Add(new ColumnDefinition());
 
@@ -64,8 +64,42 @@ namespace WorldOfCodeBreaker
          
         }//END OF PEGSGRID
 
-        private int currentRow = 0;
-        private string[,] userAsnwer = new string[ROWS, COLS];
+
+        private void updateUserAnswer(int row, int col, BoxView boxView)
+        {
+            string color = "black";
+            if(boxView.BackgroundColor == Color.Black)
+            {
+                boxView.BackgroundColor = Color.Red;
+                color = "red";
+            }
+            else if(boxView.BackgroundColor == Color.Red)
+            {
+                boxView.BackgroundColor = Color.Blue;
+                color = "blue";
+            }
+            else if (boxView.BackgroundColor == Color.Blue)
+            {
+                boxView.BackgroundColor = Color.Yellow;
+                color = "yellow";
+            }
+            else if (boxView.BackgroundColor == Color.Yellow)
+            {
+                boxView.BackgroundColor = Color.Green;
+                color = "green";
+            }
+            else if (boxView.BackgroundColor == Color.Green)
+            {
+                boxView.BackgroundColor = Color.Black;
+                color = "black";
+            }
+            userAsnwer[row % ROWS, col % COLS] = color;
+
+            BoxView peg = (BoxView)InputReplyGrid.Children.ElementAt((row % ROWS * PCOLS) + (col % PCOLS));
+            checkAnswer(row, col, peg);
+        }//END OF UPDATE USER ANSWER
+
+        //private string[,] userAsnwer = new string[ROWS, COLS];
         private void makeGrid()
         {
            
@@ -76,8 +110,9 @@ namespace WorldOfCodeBreaker
                 GameGrid.ColumnDefinitions.Add(new ColumnDefinition());
             }
 
-            //GameGrid.RowDefinitions.Add(new RowDefinition());
-
+            
+           
+            
             for (int i = 0; i < ROWS; i++)
             {
                 GameGrid.RowDefinitions.Add(new RowDefinition());
@@ -101,31 +136,7 @@ namespace WorldOfCodeBreaker
                     {
                         Command = new Command(() =>
                         {
-                            if (userInput.BackgroundColor == Color.Black)
-                            {
-                                userInput.BackgroundColor = Color.Red;
-                                userAsnwer[i%ROWS,j%COLS] = "red";//in theory this sould be userAnswer[0,0]="red";
-                            }
-                            else if (userInput.BackgroundColor == Color.Red)
-                            {
-                                userInput.BackgroundColor = Color.Blue;
-                                userAsnwer[i % ROWS, j % COLS] = "blue";
-                            }
-                            else if (userInput.BackgroundColor == Color.Blue)
-                            {
-                                userInput.BackgroundColor = Color.Yellow;
-                                userAsnwer[i % ROWS, j % COLS] = "yellow";
-                            }
-                            else if (userInput.BackgroundColor == Color.Yellow)
-                            {
-                                userInput.BackgroundColor = Color.Green;
-                                userAsnwer[i % ROWS, j % COLS] = "green";
-                            }
-                            else
-                            {
-                                userInput.BackgroundColor = Color.Black;
-                            }
-
+                            updateUserAnswer(i, j, userInput);
                         })
                     };
 
@@ -141,18 +152,18 @@ namespace WorldOfCodeBreaker
             
         }//END OF MAKEGRID
 
+        private int currentRow = 0;
         void BTNCheck_Clicked(System.Object sender, System.EventArgs e)
         {
-            string[,] corretAnswer = new string[1, 4] { { "red", "green", "blue", "yellow" } };
+            
 
             checkAnswer(corretAnswer, userAsnwer);
-
-            for(int i=0; i<COLS; i++)
+            currentRow++;
+            for (int i=0; i<COLS; i++)
             {
                 BoxView boxView = (BoxView)GameGrid.Children[currentRow * COLS + i];
                 boxView.IsEnabled = false;
             }
-            currentRow++;
 
             if (currentRow < ROWS)
             {
@@ -168,23 +179,23 @@ namespace WorldOfCodeBreaker
                 BTNCheck.IsVisible = false;
             }
         }//END OF BUTTON CHECK 
-
-        private void checkAnswer(string[,] corretAnswer, string[,] userAnswer)
+        
+        private void checkAnswer(int row, int col, BoxView peg)
         {
             for(int i=0; i<COLS; i++)
             {
-                if (userAnswer[currentRow, i]==corretAnswer[0,i])//userAnswer[0,0]==coreetAnswer[0,0]=> "red"=="red"=> blackPeg+1
+                if (userAnswer[i%ROWS, i%COLS]==corretAnswer[0,i])//userAnswer[0,0]==coreetAnswer[0,0]=> "red"=="red"=> blackPeg+1
                 {
                     //InputReplyGrid.Children[i].BackgroundColor = Color.Black;//in theory "red"=="red", display black peg
-                    InputReplyGrid.Children[i * PROWS].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[currentRow % PCOLS + i].BackgroundColor = Color.Black;
                 }
                 else
                 {
                     for(int j=0; j<COLS; j++)
                     {
-                        if(userAnswer[currentRow, i]==corretAnswer[0,j])
+                        if(userAnswer[i%ROWS, i%COLS]==corretAnswer[0,j])
                         {
-                            InputReplyGrid.Children[i*PROWS].BackgroundColor = Color.White;
+                            InputReplyGrid.Children[currentRow % PCOLS + i].BackgroundColor = Color.White;
                         }
                     }
                 }
