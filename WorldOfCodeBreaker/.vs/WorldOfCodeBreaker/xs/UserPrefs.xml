@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{1D75E2C1-04FC-48B1-B998-39F2C3E6AF5E}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="WorldOfCodeBreaker/MainPage.xaml.cs">
     <Files>
-      <File FileName="WorldOfCodeBreaker/MainPage.xaml.cs" Line="222" Column="1" />
+      <File FileName="WorldOfCodeBreaker/MainPage.xaml.cs" Line="111" Column="14" />
       <File FileName="WorldOfCodeBreaker/MainPage.xaml" />
     </Files>
     <Pads>
@@ -17,6 +17,9 @@
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

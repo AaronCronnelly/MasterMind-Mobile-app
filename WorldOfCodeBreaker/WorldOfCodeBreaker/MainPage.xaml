@@ -21,7 +21,7 @@
               VerticalOptions="Start" IsVisible="false" 
               >
             </Grid>
-        <Grid x:Name="InputReplyGrid" Background="lightblue" HeightRequest="30"
+        <Grid x:Name="InputReplyGrid" Background="lightblue" HeightRequest="400"
               WidthRequest="80" HorizontalOptions="End" VerticalOptions="Start" Margin="5,30"
               IsVisible="false">
         </Grid>

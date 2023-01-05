@@ -20,6 +20,7 @@ namespace WorldOfCodeBreaker
         const int PCOLS = 4;
 
         //GLOBAL VARIABLE
+        int pegRowCurrent = 0;
         private string[,] userAsnwer = new string[ROWS, COLS];
         private string[,] corretAnswer = new string[1, 4] { { "red", "green", "blue", "yellow" } };
 
@@ -32,48 +33,49 @@ namespace WorldOfCodeBreaker
         void BTNBegin_Clicked(System.Object sender, System.EventArgs e)
         {
             makeGrid();
-            PegsGrid();//DISPLAYS USERS PEGS WHITE/BLACK
+            PegsGrid(pegRowCurrent);//DISPLAYS USERS PEGS WHITE/BLACK
             BTNBegin.IsVisible = false;
             BTNCheck.IsVisible = true;
         }//END OF BTNBEGIN
 
       
 
-        private void PegsGrid()
+        private void PegsGrid(int row)
         {
-
             InputReplyGrid.IsVisible = true;
+
             for (int i = 0; i < PCOLS; i++)
             {
                 InputReplyGrid.ColumnDefinitions.Add(new ColumnDefinition());
-
-                var pegs = new BoxView
-                {
-                    Margin = 1,
-                    HeightRequest = 20,
-                    WidthRequest = 20,
-                    CornerRadius = 5,
-                    BackgroundColor = Color.Yellow,
-                    Opacity = 1,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                };
-
-
-                InputReplyGrid.Children.Add(pegs, i, 0);
             }
 
+            for (int j = 0; j < 10; j++)
+            {
+                InputReplyGrid.RowDefinitions.Add(new RowDefinition());
+                for (int i = 0; i < PCOLS; i++)
+                {
+                    var pegs = new BoxView
+                    {
+                        Margin = 1,
+                        HeightRequest = 20,
+                        WidthRequest = 20,
+                        CornerRadius = 5,
+                        BackgroundColor = Color.Yellow,
+                        Opacity = 1,
+                        HorizontalOptions = LayoutOptions.CenterAndExpand,
+                        VerticalOptions = LayoutOptions.CenterAndExpand,
+                    };
 
-
-
-
+                    InputReplyGrid.Children.Add(pegs, i, j);
+                }
+            }
         }//END OF PEGSGRID
 
-        private string color = "red";
+        //private string color = "red";
         private int currentCol = 0;
         private void updateUserAnswer(int row, int col, BoxView boxView)
         {
-
+            string color = "red";
             if (boxView.BackgroundColor == Color.Black)
             {
                 boxView.BackgroundColor = Color.Red;
@@ -107,9 +109,6 @@ namespace WorldOfCodeBreaker
             {
                 currentCol = 0;
             }
-
-
-
 
         }//END OF UPDATE USER ANSWER
 
@@ -169,9 +168,6 @@ namespace WorldOfCodeBreaker
         private int currentRow = 0;
         void BTNCheck_Clicked(System.Object sender, System.EventArgs e)
         {
-            
-
-            
             CheckAnswer();
             currentRow++;
             for (int i=0; i<COLS; i++)
@@ -198,27 +194,27 @@ namespace WorldOfCodeBreaker
         
         private void CheckAnswer()
         {
-            /*
-             * ToDo
-             * compare answer
-             * update pegs
-             * 
-             *UPDATING PEGS
-             * 
-             */
-
             int black = 0;
             int white = 0;
 
+            
+
             for (int i = 0; i < 4; i++)
             {
+                // Check if the color is in the correct position
+                if (userAsnwer[currentRow, i] == corretAnswer[0, i])
+                {
+                    black++;
+                    continue;
+                }
 
+                // Check if the color is in the incorrect position
                 for (int j = 0; j < 4; j++)
                 {
                     if (userAsnwer[currentRow, i] == corretAnswer[0, j])
                     {
-                        black++;
-                        continue;
+                        white++;
+                        break;
                     }
                 }
             }
@@ -231,49 +227,11 @@ namespace WorldOfCodeBreaker
             System.Diagnostics.Debug.WriteLine(userAsnwer[0, 2]);
             System.Diagnostics.Debug.WriteLine(userAsnwer[0, 3]);
 
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 0]);
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 1]);
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 2]);
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 3]);
-
             System.Diagnostics.Debug.WriteLine(black);//when 1 color, black=1, when two/more, black=0;
-            //int blackPegs = black;
-            //int whitePegs = white;
+            System.Diagnostics.Debug.WriteLine(white);//when 1 color, black=1, when two/more, black=0;
 
-            //for(int i=0; i<blackPegs; i++)
-            //{
-            //    InputReplyGrid.Children[0].BackgroundColor = Color.Black;
-            //    //    var pegs = new BoxView
-            //    //    {
-            //    //        Margin = 1,
-            //    //        HeightRequest = 20,
-            //    //        WidthRequest = 20,
-            //    //        CornerRadius = 5,
-            //    //        BackgroundColor = Color.Black,
-            //    //        Opacity = 1,
-            //    //        HorizontalOptions = LayoutOptions.CenterAndExpand,
-            //    //        VerticalOptions = LayoutOptions.CenterAndExpand,
-            //    //    };
-            //    //    InputReplyGrid.Children.Add(pegs, i, 0);
-            //}
+            PegsGrid(pegRowCurrent);
 
-            //for(int i=blackPegs; i<whitePegs+blackPegs; i++)
-            //{
-            //    InputReplyGrid.Children[0].BackgroundColor = Color.White;
-
-            //    //var pegs = new BoxView
-            //    //{
-            //    //    Margin = 1,
-            //    //    HeightRequest = 20,
-            //    //    WidthRequest = 20,
-            //    //    CornerRadius = 5,
-            //    //    BackgroundColor = Color.White,
-            //    //    Opacity = 1,
-            //    //    HorizontalOptions = LayoutOptions.CenterAndExpand,
-            //    //    VerticalOptions = LayoutOptions.CenterAndExpand,
-            //    //};
-            //    //InputReplyGrid.Children.Add(pegs, i, 0);
-            //}
 
             switch (black)
             {
@@ -301,8 +259,40 @@ namespace WorldOfCodeBreaker
 
                 default:
                     break;
-            }
 
+
+
+            }//END OF SWITCH BLACK
+
+            switch (white)
+            {
+                case 1:
+                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
+                    break;
+
+                case 2:
+                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[1].BackgroundColor = Color.White;
+                    break;
+
+                case 3:
+                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[1].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[2].BackgroundColor = Color.White;
+                    break;
+
+                case 4:
+                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[1].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[2].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[3].BackgroundColor = Color.White;
+                    break;
+
+                default:
+                    break;
+            }//END OF SWTICH WHITE
+
+            pegRowCurrent++;
         }//END OF CHECKANSWER
      }//END OF MAIN PAGE
 }//END OF NAMES SPACE
