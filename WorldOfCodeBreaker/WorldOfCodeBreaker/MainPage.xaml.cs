@@ -33,14 +33,14 @@ namespace WorldOfCodeBreaker
         void BTNBegin_Clicked(System.Object sender, System.EventArgs e)
         {
             makeGrid();
-            PegsGrid(pegRowCurrent);//DISPLAYS USERS PEGS WHITE/BLACK
+            PegsGrid();//DISPLAYS USERS PEGS WHITE/BLACK
             BTNBegin.IsVisible = false;
             BTNCheck.IsVisible = true;
         }//END OF BTNBEGIN
 
       
 
-        private void PegsGrid(int row)
+        private void PegsGrid()
         {
             InputReplyGrid.IsVisible = true;
 
@@ -69,6 +69,8 @@ namespace WorldOfCodeBreaker
                     InputReplyGrid.Children.Add(pegs, i, j);
                 }
             }
+
+
         }//END OF PEGSGRID
 
         //private string color = "red";
@@ -193,11 +195,12 @@ namespace WorldOfCodeBreaker
         }//END OF BUTTON CHECK 
         
         private void CheckAnswer()
-        {
+        {//todo need to figure out why, this isnt working, when the fuction runs the first time, int black, incremnets, but when i run it the second time it doesn't
             int black = 0;
             int white = 0;
 
-            
+            black = 0;
+            white = 0;
 
             for (int i = 0; i < 4; i++)
             {
@@ -229,32 +232,34 @@ namespace WorldOfCodeBreaker
 
             System.Diagnostics.Debug.WriteLine(black);//when 1 color, black=1, when two/more, black=0;
             System.Diagnostics.Debug.WriteLine(white);//when 1 color, black=1, when two/more, black=0;
+            System.Diagnostics.Debug.WriteLine(pegRowCurrent);//testign to see what ped row should be
 
-            PegsGrid(pegRowCurrent);
+
 
 
             switch (black)
             {
                 case 1:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
                     break;
 
                 case 2:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.Black;
-                    InputReplyGrid.Children[1].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[1 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
+
                     break;
 
                 case 3:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.Black;
-                    InputReplyGrid.Children[1].BackgroundColor = Color.Black;
-                    InputReplyGrid.Children[2].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[1 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[2 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
                     break;
 
                 case 4:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.Black;
-                    InputReplyGrid.Children[1].BackgroundColor = Color.Black;
-                    InputReplyGrid.Children[2].BackgroundColor = Color.Black;
-                    InputReplyGrid.Children[3].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[1 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[2 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
+                    InputReplyGrid.Children[3 + pegRowCurrent * PCOLS].BackgroundColor = Color.Black;
                     break;
 
                 default:
@@ -292,7 +297,12 @@ namespace WorldOfCodeBreaker
                     break;
             }//END OF SWTICH WHITE
 
+            
             pegRowCurrent++;
+
+            
+
+
         }//END OF CHECKANSWER
-     }//END OF MAIN PAGE
+    }//END OF MAIN PAGE
 }//END OF NAMES SPACE
