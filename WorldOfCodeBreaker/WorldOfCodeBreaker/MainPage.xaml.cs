@@ -22,7 +22,7 @@ namespace WorldOfCodeBreaker
         //GLOBAL VARIABLE
         int pegRowCurrent = 0;
         private string[,] userAsnwer = new string[ROWS, COLS];
-        private string[,] corretAnswer = new string[1, 4] { { "red", "green", "blue", "yellow" } };
+        private string[,] corretAnswer = new string[1, 4];
 
         public MainPage()
         {
@@ -34,11 +34,46 @@ namespace WorldOfCodeBreaker
         {
             makeGrid();
             PegsGrid();//DISPLAYS USERS PEGS WHITE/BLACK
+            CorretAnswerPick();
             BTNBegin.IsVisible = false;
             BTNCheck.IsVisible = true;
+
+            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 0]);
+            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 1]);
+            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 2]);
+            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 3]);
         }//END OF BTNBEGIN
 
-      
+        private void CorretAnswerPick()
+        {
+            Random random = new Random();
+            for (int i = 0; i < 4; i++)
+            {
+                int colorIndex = random.Next(0, 5); // Generate a random number between 0 and 4
+                string color = "";
+                switch (colorIndex)
+                {
+                    case 0:
+                        color = "red";
+                        break;
+                    case 1:
+                        color = "blue";
+                        break;
+                    case 2:
+                        color = "yellow";
+                        break;
+                    case 3:
+                        color = "green";
+                        break;
+                    case 4:
+                        color = "black";
+                        break;
+                }
+                corretAnswer[0, i] = color;
+            }
+
+            
+        }//END OF CORRECTASNWERPCIK
 
         private void PegsGrid()
         {
@@ -194,14 +229,11 @@ namespace WorldOfCodeBreaker
            
         }//END OF BUTTON CHECK 
         
-        private void CheckAnswer()
-        {//todo need to figure out why, this isnt working, when the fuction runs the first time, int black, incremnets, but when i run it the second time it doesn't
             int black = 0;
             int white = 0;
-
-            black = 0;
-            white = 0;
-
+        private void CheckAnswer()
+        {
+            
             for (int i = 0; i < 4; i++)
             {
                 // Check if the color is in the correct position
@@ -229,6 +261,8 @@ namespace WorldOfCodeBreaker
             System.Diagnostics.Debug.WriteLine(userAsnwer[0, 1]);
             System.Diagnostics.Debug.WriteLine(userAsnwer[0, 2]);
             System.Diagnostics.Debug.WriteLine(userAsnwer[0, 3]);
+
+           
 
             System.Diagnostics.Debug.WriteLine(black);//when 1 color, black=1, when two/more, black=0;
             System.Diagnostics.Debug.WriteLine(white);//when 1 color, black=1, when two/more, black=0;
@@ -265,36 +299,36 @@ namespace WorldOfCodeBreaker
                 default:
                     break;
 
-
-
             }//END OF SWITCH BLACK
 
             switch (white)
             {
                 case 1:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
                     break;
 
                 case 2:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
-                    InputReplyGrid.Children[1].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[1 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
+
                     break;
 
                 case 3:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
-                    InputReplyGrid.Children[1].BackgroundColor = Color.White;
-                    InputReplyGrid.Children[2].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[1 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[2 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
                     break;
 
                 case 4:
-                    InputReplyGrid.Children[0].BackgroundColor = Color.White;
-                    InputReplyGrid.Children[1].BackgroundColor = Color.White;
-                    InputReplyGrid.Children[2].BackgroundColor = Color.White;
-                    InputReplyGrid.Children[3].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[0 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[1 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[2 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
+                    InputReplyGrid.Children[3 + pegRowCurrent * PCOLS].BackgroundColor = Color.White;
                     break;
 
                 default:
                     break;
+
             }//END OF SWTICH WHITE
 
             
