@@ -32,24 +32,19 @@ namespace WorldOfCodeBreaker
 
         void BTNBegin_Clicked(System.Object sender, System.EventArgs e)
         {
-            makeGrid();
-            PegsGrid();//DISPLAYS USERS PEGS WHITE/BLACK
-            CorretAnswerPick();
+            makeGrid();//main gird
+            PegsGrid();//display pegs 
+            CorretAnswerPick();//created the color code
             BTNBegin.IsVisible = false;
             BTNCheck.IsVisible = true;
-
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 0]);
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 1]);
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 2]);
-            System.Diagnostics.Debug.WriteLine(corretAnswer[0, 3]);
-        }//END OF BTNBEGIN
+         }//END OF BTNBEGIN
 
         private void CorretAnswerPick()
         {
             Random random = new Random();
             for (int i = 0; i < 4; i++)
             {
-                int colorIndex = random.Next(0, 5); // Generate a random number between 0 and 4
+                int colorIndex = random.Next(0, 5);
                 string color = "";
                 switch (colorIndex)
                 {
@@ -68,12 +63,10 @@ namespace WorldOfCodeBreaker
                     case 4:
                         color = "black";
                         break;
-                }
+                }//end of swithc
                 corretAnswer[0, i] = color;
-            }
-
-            
-        }//END OF CORRECTASNWERPCIK
+            }//end of for loop
+        }//END OF CORRECT ANSWER PICK
 
         private void PegsGrid()
         {
@@ -82,7 +75,7 @@ namespace WorldOfCodeBreaker
             for (int i = 0; i < PCOLS; i++)
             {
                 InputReplyGrid.ColumnDefinitions.Add(new ColumnDefinition());
-            }
+            }//end of for loop
 
             for (int j = 0; j < 10; j++)
             {
@@ -102,16 +95,16 @@ namespace WorldOfCodeBreaker
                     };
 
                     InputReplyGrid.Children.Add(pegs, i, j);
-                }
-            }
+                }//end of out for loop 
+            }//end of outher for looop
 
 
         }//END OF PEGSGRID
 
-        //private string color = "red";
         private int currentCol = 0;
         private void updateUserAnswer(int row, int col, BoxView boxView)
         {
+            //updating userAsnwer depening on user choice
             string color = "red";
             if (boxView.BackgroundColor == Color.Black)
             {
@@ -139,7 +132,6 @@ namespace WorldOfCodeBreaker
                 color = "black";
             }
 
-            //userAsnwer[row % ROWS, col % COLS] = color;
             userAsnwer[row % ROWS, currentCol] = color;
             currentCol++;
             if (currentCol >= 4)
@@ -149,27 +141,20 @@ namespace WorldOfCodeBreaker
 
         }//END OF UPDATE USER ANSWER
 
-        //private string[,] userAsnwer = new string[ROWS, COLS];
         private void makeGrid()
-        {
-           
+        {           
             GameGrid.IsVisible = true;
 
             for(int i=0; i<COLS; i++)
             {
                 GameGrid.ColumnDefinitions.Add(new ColumnDefinition());
-            }
-
-            
-           
+            }//end of for
             
             for (int i = 0; i < ROWS; i++)
             {
                 GameGrid.RowDefinitions.Add(new RowDefinition());
                 for (int j = 0; j < COLS; j++)
                 {
-                    //GameGrid.ColumnDefinitions.Add(new ColumnDefinition());
-
                     var userInput = new BoxView
                     {
                         Margin = 5,
@@ -197,8 +182,8 @@ namespace WorldOfCodeBreaker
                     {
                         userInput.IsEnabled = false;
                     }
-                }
-            }
+                }//end of inner for loop
+            }//end of outher for loop 
             
         }//END OF MAKEGRID
 
@@ -211,7 +196,7 @@ namespace WorldOfCodeBreaker
             {
                 BoxView boxView = (BoxView)GameGrid.Children[currentRow * COLS + i];
                 boxView.IsEnabled = false;
-            }
+            }//end of for loop
 
             if (currentRow < ROWS)
             {
@@ -251,25 +236,8 @@ namespace WorldOfCodeBreaker
                         white++;
                         break;
                     }
-                }
-            }
-
-
-
-
-            System.Diagnostics.Debug.WriteLine(userAsnwer[0, 0]);
-            System.Diagnostics.Debug.WriteLine(userAsnwer[0, 1]);
-            System.Diagnostics.Debug.WriteLine(userAsnwer[0, 2]);
-            System.Diagnostics.Debug.WriteLine(userAsnwer[0, 3]);
-
-           
-
-            System.Diagnostics.Debug.WriteLine(black);//when 1 color, black=1, when two/more, black=0;
-            System.Diagnostics.Debug.WriteLine(white);//when 1 color, black=1, when two/more, black=0;
-            System.Diagnostics.Debug.WriteLine(pegRowCurrent);//testign to see what ped row should be
-
-
-
+                }//end of inner for
+            }//end of outer for
 
             switch (black)
             {
@@ -333,9 +301,6 @@ namespace WorldOfCodeBreaker
 
             
             pegRowCurrent++;
-
-            
-
 
         }//END OF CHECKANSWER
     }//END OF MAIN PAGE
