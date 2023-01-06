@@ -35,4 +35,14 @@
     </StackLayout>
 </ContentPage>
 
-
+<!--
+REFRENCE LIST
+https://www.tutorialsteacher.com/articles/generate-random-numbers-in-csharp
+https://stackoverflow.com/questions/22216408/c-sharp-adding-random-numbers-to-array
+https://stackoverflow.com/questions/4213385/random-function-in-c-sharp
+https://www.w3schools.com/cs/cs_math.php
+https://www.youtube.com/watch?v=NLfxNo7Q0Pk&t=622s
+https://www.youtube.com/watch?v=alOKW4wAZ3o&t=130s
+https://mastermindgame.org
+https://www.geeksforgeeks.org/mastermind-game-using-python/
+-->

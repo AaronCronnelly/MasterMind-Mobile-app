@@ -26,7 +26,7 @@ namespace WorldOfCodeBreaker
         {
             await DisplayAlert("Rules of the game", "Your aim to find decode the color code, you will be giving, " + "10 trys to do this, after that" +
                 " the computer will win" + "if you win you will be told, you will input a 4 color code, and then ask to check, " + "You will either win, or be giving pegs depend" +
-                "on how close you were, you get white pegs for the right color in the right location, and you get black pegs for the right color wrong location" +
+                "on how close you were, you get black pegs for the right color in the right location, and you get white pegs for the right color wrong location" +
                 "please enjoy and have fun", "ok");  
         }
     }
